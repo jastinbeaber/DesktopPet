@@ -7,14 +7,14 @@ import os
 
 class Pet(object):
     def __init__(self, width=1400, height=800):
-        self.image_url = 'images/meizi/meizi_'
+        self.image_url = 'images/sxh/sxh_'
         self.image_key = 1
         self.image = self.image_url + str(self.image_key) + '.png'
         self.rect_x = width
         self.rect_y = height
 
     def gif(self):
-        if self.image_key < 61:
+        if self.image_key < 11:
             self.image_key += 1
         else:
             self.image_key = 1
@@ -29,8 +29,6 @@ class Label(QLabel):
 
     def rightMenu(self):
         menu = QMenu(self)
-        menu.addAction(QAction(QIcon('images/net.png'), '浏览器', self, triggered=self.net))
-        menu.addAction(QAction(QIcon('images/music.ico'), '网易云', self, triggered=self.music))
         menu.addAction(QAction(QIcon('images/eye.png'), '隐藏', self, triggered=self.hide))
         menu.addAction(QAction(QIcon('images/exit.png'), '退出', self, triggered=self.quit))
         menu.exec_(QCursor.pos())
@@ -117,7 +115,7 @@ class App(QWidget):
 
     def tray(self):
         tray = QSystemTrayIcon(self)
-        tray.setIcon(QIcon('images/meizi/meizi_0.png'))
+        tray.setIcon(QIcon('images/sxh/sxh_0.png'))
 
         display = QAction(QIcon('images/eye.png'), '显示', self, triggered=self.display)
         quit = QAction(QIcon('images/exit.png'), '退出', self, triggered=self.quit)
